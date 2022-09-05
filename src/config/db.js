@@ -1,5 +1,6 @@
 import Sequelize from "sequelize";
 import dontenv from 'dotenv'
+import mysql2 from 'mysql2';
 dontenv.config({path:'.env'})
 
 
@@ -11,6 +12,7 @@ const db = new Sequelize(
         host:process.env.DB_HOST,
         port:process.env.DB_PORT,
         dialect: 'mysql',
+        dialectModule: mysql2,
         define:{
             timestamps: false
         },
