@@ -2,15 +2,14 @@
   "name": "clinica_del_norte_backend",
   "version": "1.0.0",
   "description": "Backend FCN project",
-  "main": "index.js",   
-  "type": "module", 
+  "main": "index.js",
+  "type": "module",
   "engines": {
     "node": "16.x"
   },
   "scripts": {
     "start": "node index.js",
-    "dev":"nodemon index.js"
-    
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
