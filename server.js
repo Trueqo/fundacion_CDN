@@ -14,6 +14,7 @@ try {
     console.log('conexion establecida')
 
 } catch (error) {
+    console.log("Soy el error: ")
     console.log(error)
 }
 
