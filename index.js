@@ -23,10 +23,6 @@ try {
 app.use(routes)
 
 
-
-
-
-
 //para ejecutar el servidor
 
 const PORT = process.env.PORT || 3000
