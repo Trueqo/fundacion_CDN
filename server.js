@@ -1,6 +1,7 @@
 import express from 'express';
-import routes from './routes/routes.js'
-import db from './config/db.js'
+import routes from './src/routes/routes.js';
+import db from './src/config/db.js';
+
 
 const app = express()
 
