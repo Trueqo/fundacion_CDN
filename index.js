@@ -1,11 +1,12 @@
 import express from 'express';
 import routes from './src/routes/routes.js';
 import db from './src/config/db.js';
-
+import cors from 'cors'; 
 
 const app = express()
-
+app.use(cors())
 app.use(express.json())
+
 
 // Conexión a la base de datos
 try {

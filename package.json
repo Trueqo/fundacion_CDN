@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/Alecs0303/clinica_del_norte_backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mysql2": "^2.3.3",
