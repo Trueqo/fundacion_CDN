@@ -1,0 +1,38 @@
+{
+  "name": "clinica_del_norte_backend",
+  "version": "1.0.0",
+  "description": "Backend FCN project",
+  "main": "index.js",   
+  "type": "module", 
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev":"nodemon ./src/server.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alecs0303/clinica_del_norte_backend.git"
+  },
+  "keywords": [
+    "CRUD",
+    "node",
+    "js",
+    "API",
+    "express"
+  ],
+  "author": "Alecsandra Janeth Piedrahita Restrepo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alecs0303/clinica_del_norte_backend/issues"
+  },
+  "homepage": "https://github.com/Alecs0303/clinica_del_norte_backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
