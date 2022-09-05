@@ -4,9 +4,12 @@
   "description": "Backend FCN project",
   "main": "index.js",   
   "type": "module", 
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "start": "node ./server.js",
-    "dev":"nodemon server.js"
+    "start": "node index.js",
+    "dev":"nodemon index.js"
     
   },
   "repository": {
