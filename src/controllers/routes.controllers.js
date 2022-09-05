@@ -23,23 +23,22 @@ const createRoute = async (req,res) =>{
 
 
 // Con este controlador se actualiza un dispositivo
-const updateDevice = async (req,res) =>{
-    const {id} = req.params
-    const {nombre,serie,precinto} = req.body
+// const updateDevice = async (req,res) =>{
+//     const {id} = req.params
+//     const {nombre,serie,precinto} = req.body
 
-    const device = await Device.update({
-        nombre,
-        serie,
-        precinto
-    },{
-        where:{
-            id
-        }
-    })
-    res.send('DeviceUpdated')
-}
+//     const device = await Device.update({
+//         nombre,
+//         serie,
+//         precinto
+//     },{
+//         where:{
+//             id
+//         }
+//     })
+//     res.send('DeviceUpdated')
+// }
 export {
     getRoutes,
-    createRoute,
-    updateDevice
+    createRoute
 }

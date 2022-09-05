@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {createRoute,getRoutes,updateDevice} from '../controllers/routes.controllers.js'
+import {createRoute,getRoutes} from '../controllers/routes.controllers.js'
 
 const router = Router()
 
@@ -10,6 +10,6 @@ router.get('/getdevice',getRoutes)
 router.post('/createdevice',createRoute)
 
 //Ruta para actualizar dispositivos
-router.put('/updatedevice/:id',updateDevice)
+// router.put('/updatedevice/:id',updateDevice)
 
 export default router
