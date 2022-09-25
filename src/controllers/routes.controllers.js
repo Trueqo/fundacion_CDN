@@ -41,8 +41,8 @@ const dataArry = async (req, res) => {
 const createMultipleRoutes = async (req, res) => {
     // console.log("holaa")
     const data = req.body;
-    // console.log(data) 
-    // res.send(data)
+    console.log("Hola estoy en el back",data) 
+    
     // 
     try {
         data.forEach(async device => {
