@@ -21,27 +21,42 @@ const createRoute = async (req, res) => {
     res.send('DeviceCreated')
 }
 
+// Metodo para pasar de array a json
+const dataArry = async (req, res) => {
+
+    const { nombre, serie, precinto } = req
+
+    const device = await Device.create({
+        nombre,
+        serie,
+        precinto
+    })
+
+
+    res.send('DeviceCreated')
+}
+
 // Create multiple devices
 
 const createMultipleRoutes = async (req, res) => {
-    console.log("holaa")
-    const data = req.body;
-    console.log(data)
-    res.send(data)
+    // console.log("holaa")
+    // const data = req.body;
+    // console.log(data)
+    // res.send(data)
     
-    // try {
-    //     data.forEach(async device => {
+    try {
+        data.forEach(async device => {
 
-    //         const newdevice = await createRoute(device)
-    //         console.log(newdevice)
+            const newdevice = await dataArry(device)
+            console.log(newdevice)
 
-    //     });
+        });
 
-    // } catch (error) {
-    //     return res.status(401).json({ message: 'error en la carga de datos' })
-    // }
+    } catch (error) {
+        return res.status(401).json({ message: 'error en la carga de datos' })
+    }
 
-    // res.status(200).json('hecho');
+    res.status(200).json('hecho');
 }
 
 
