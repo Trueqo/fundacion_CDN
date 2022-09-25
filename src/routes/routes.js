@@ -12,6 +12,7 @@ router.post('/createdevice',createRoute)
 // Ruta para crear multiples dispositivos
 router.post('/createmultipledevices',createMultipleRoutes)
 
+
 //Ruta para actualizar dispositivos
 // router.put('/updatedevice/:id',updateDevice)
 

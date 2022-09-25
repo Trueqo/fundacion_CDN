@@ -26,20 +26,21 @@ const createRoute = async (req, res) => {
 const createMultipleRoutes = async (req, res) => {
 
     const data = req.body;
+    res.send("<h1>Funcionado</h1>")
+    console.log(data)
+    // try {
+    //     data.forEach(async device => {
 
-    try {
-        data.forEach(async device => {
+    //         const newdevice = await createRoute(device)
+    //         console.log(newdevice)
 
-            const newdevice = await createRoute(device)
-            console.log(newdevice)
+    //     });
 
-        });
+    // } catch (error) {
+    //     return res.status(401).json({ message: 'error en la carga de datos' })
+    // }
 
-    } catch (error) {
-        return res.status(401).json({ message: 'error en la carga de datos' })
-    }
-
-    res.status(200).json('hecho');
+    // res.status(200).json('hecho');
 }
 
 
