@@ -24,10 +24,11 @@ const createRoute = async (req, res) => {
 // Create multiple devices
 
 const createMultipleRoutes = async (req, res) => {
-
+    console.log("holaa")
     const data = req.body;
-    res.send("<h1>Funcionado</h1>")
     console.log(data)
+    res.send(data)
+    
     // try {
     //     data.forEach(async device => {
 
