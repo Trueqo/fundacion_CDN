@@ -17,3 +17,5 @@ router.post('/createmultipledevices',createMultipleRoutes)
 // router.put('/updatedevice/:id',updateDevice)
 
 export default router
+
+// 

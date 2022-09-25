@@ -33,7 +33,7 @@ const dataArry = async (req, res) => {
     })
 
 
-    res.send('DeviceCreated')
+    return device 
 }
 
 // Create multiple devices
@@ -41,14 +41,13 @@ const dataArry = async (req, res) => {
 const createMultipleRoutes = async (req, res) => {
     // console.log("holaa")
     const data = req.body;
-    // console.log(data)
+    // console.log(data) 
     // res.send(data)
-    
+    // 
     try {
         data.forEach(async device => {
 
-
-            const newdevice = await dataArry(device)
+            const newdevice = await dataArry(device) 
             console.log(newdevice)
 
         });
