@@ -4,11 +4,13 @@ import db from './src/config/db.js';
 import cors from 'cors'; 
 
 const app = express()
-app.use(cors(
-    "Access-Control-Allow-Origin: *"
-))
+app.use(cors())
 app.use(express.json())
-
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  })
 
 // Conexión a la base de datos
 try {
