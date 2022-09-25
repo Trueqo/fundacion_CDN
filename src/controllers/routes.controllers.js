@@ -26,12 +26,12 @@ const dataArry = async (req, res) => {
 
     const { nombre, serie, precinto } = req
 
-    const device = await Device.create({
+    const newDevice =  new Device({
         nombre,
         serie,
         precinto
     })
-
+    await newDevice.save()
 
     return device 
 }
