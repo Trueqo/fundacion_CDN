@@ -9,31 +9,88 @@ const getRoutes = async (req, res) => {
 // Con este controlador se crea un dispositivo 
 const createRoute = async (req, res) => {
 
-    const { nombre, serie, precinto } = req.body
-
+    const { nombre, serie, precinto, proveedor, placa, marca, modelo, ubicacion, datenow, buyDate, vidaUtil, dRespuestos, seFabrica, existeMejorTecnologia, nivelDeCriticidad, cumpleNecesidadesActuales, inspeccionVisual, haSidoRepadado,nivelDeCarga, cumpleMantenimiento,regimenTrabajo, incidentesOEventos, cumpleParametrosParaAtencion, valorHistorico, costoReparaciones,costoEquipoNuevo } = req.body
+    
     const device = await Device.create({
         nombre,
         serie,
-        precinto
-    })
+        precinto,
+        proveedor,
+        placa,
+        marca,
+        modelo,
+        ubicacion,
+        datenow,
+        buyDate,
+        vidaUtil,
+        dRespuestos,
+        seFabrica,
+        existeMejorTecnologia,
+        nivelDeCriticidad,
+        cumpleNecesidadesActuales,
+        inspeccionVisual,
+        haSidoRepadado,
+        nivelDeCarga,
+        cumpleMantenimiento,
+        regimenTrabajo,
+        incidentesOEventos,
+        cumpleParametrosParaAtencion,
+        valorHistorico,
+        costoReparaciones,
+        costoEquipoNuevo
 
+    })
 
     res.send('DeviceCreated')
 }
 
+// Con este controlador se selecciona un dispositivo
+const getDevice = async (req, res) => {
+    const { id } = req.params
+    const device = await Device.findOne({
+        where: {
+            id
+        }
+    })
+    res.json(device)
+}
+
 // Metodo para pasar de array a json
 const dataArry = async (req, res) => {
-
-    const { nombre, serie, precinto } = req
+    
+    const [ nombre, serie, precinto, proveedor, placa, marca, modelo, ubicacion, datenow, buyDate, vidaUtil, dRespuestos, seFabrica, existeMejorTecnologia, nivelDeCriticidad, cumpleNecesidadesActuales, inspeccionVisual, haSidoRepadado,nivelDeCarga, cumpleMantenimiento,regimenTrabajo, incidentesOEventos, cumpleParametrosParaAtencion, valorHistorico, costoReparaciones,costoEquipoNuevo ] = req
 
     const newDevice =  new Device({
         nombre,
         serie,
-        precinto
+        precinto,
+        proveedor,
+        placa,
+        marca,
+        modelo,
+        ubicacion,
+        datenow,
+        buyDate,
+        vidaUtil,
+        dRespuestos,
+        seFabrica,
+        existeMejorTecnologia,
+        nivelDeCriticidad,
+        cumpleNecesidadesActuales,
+        inspeccionVisual,
+        haSidoRepadado,
+        nivelDeCarga,
+        cumpleMantenimiento,
+        regimenTrabajo,
+        incidentesOEventos,
+        cumpleParametrosParaAtencion,
+        valorHistorico,
+        costoReparaciones,
+        costoEquipoNuevo
     })
+    
     await newDevice.save()
-
-    return device 
+    return newDevice 
 }
 
 // Create multiple devices
@@ -41,14 +98,13 @@ const dataArry = async (req, res) => {
 const createMultipleRoutes = async (req, res) => {
     // console.log("holaa")
     const data = req.body;
-    console.log("Hola estoy en el back",data) 
+    
     
     // 
     try {
-        data.forEach(async device => {
 
+        data.forEach(async device => {
             const newdevice = await dataArry(device) 
-            console.log(newdevice)
 
         });
 
@@ -80,5 +136,6 @@ const createMultipleRoutes = async (req, res) => {
 export {
     getRoutes,
     createRoute,
-    createMultipleRoutes
+    createMultipleRoutes,
+    getDevice
 }
