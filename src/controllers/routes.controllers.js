@@ -44,16 +44,7 @@ const createRoute = async (req, res) => {
     res.send('DeviceCreated')
 }
 
-// Con este controlador se selecciona un dispositivo
-const getDevice = async (req, res) => {
-    const { id } = req.params
-    const device = await Device.findOne({
-        where: {
-            id
-        }
-    })
-    res.json(device)
-}
+
 
 // Metodo para pasar de array a json
 const dataArry = async (req, res) => {
@@ -116,26 +107,9 @@ const createMultipleRoutes = async (req, res) => {
 }
 
 
-
-// Con este controlador se actualiza un dispositivo
-// const updateDevice = async (req,res) =>{
-//     const {id} = req.params
-//     const {nombre,serie,precinto} = req.body
-
-//     const device = await Device.update({
-//         nombre,
-//         serie,
-//         precinto
-//     },{
-//         where:{
-//             id
-//         }
-//     })
-//     res.send('DeviceUpdated')
-// }
 export {
     getRoutes,
     createRoute,
     createMultipleRoutes,
-    getDevice
+    
 }
